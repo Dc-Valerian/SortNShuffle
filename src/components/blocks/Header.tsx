@@ -6,8 +6,8 @@ import Switcher from "../DarkMode/Switcher/Switcher";
 import { Typewriter } from "react-simple-typewriter";
 
 const Header = () => {
-  const [buttonColor, setButtonColor] = useState<string>("transparent");
-  const [buttonWrapGradient, setButtonWrapGradient] = useState<string>(""); // State for buttonWrap gradient
+  const [buttonWrapGradient, setButtonWrapGradient] = useState<string>(""); 
+  console.log(setButtonWrapGradient)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -25,25 +25,26 @@ const Header = () => {
   }, []);
 
   return (
-    <div className=" h-screen flex items-center justify-center">
-   
+    <div className="h-screen flex items-center justify-center">
       <div className="w-full h-full flex flex-col items-center justify-center gap-[35px] text-white dark:bg-gray-900">
-           <div className="w-[90px] m-[10px] h-[45px] rounded-md text-[20px] text-[white] bg-[#12C5E4]  border border-[#12C5E4] flex items-center justify-center dark:text-[white] md:h-[40px] md:w-[50px]">
-        <Switcher />
-      </div>
+        <div className="w-[90px] m-[10px] h-[45px] rounded-md text-[20px] text-[white] bg-[#12C5E4]  border border-[#12C5E4] flex items-center justify-center dark:text-[white] md:h-[40px] md:w-[50px]">
+          <Switcher />
+        </div>
         <Fade delay={1000} cascade damping={0.1}>
           <h2 className="text-3xl text-[black] dark:text-[white]">
-          <Typewriter
-                    words={["SortNShuffle","Your","Names",]}
-                    loop
-                    cursor
-                    typeSpeed={500}
-                    delaySpeed={150}
-                  />
+            <Typewriter
+              words={["SortNShuffle", "Your", "Names"]}
+              loop
+              cursor
+              typeSpeed={500}
+              delaySpeed={150}
+            />
           </h2>
         </Fade>
-        <p className="w-[90%] text-center  text-opacity-60 text-sm md:w-[40%] md:text-[20px] leading-[28px] text-[black] dark:text-[white]">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ipsa aut sunt sapiente. Accusamus repudiandae dolorum reiciendis doloribus obcaecati vel.
+        <p className="w-[90%] text-center text-opacity-60 text-sm md:w-[40%] md:text-[20px] leading-[28px] text-[black] dark:text-[white]">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ipsa
+          aut sunt sapiente. Accusamus repudiandae dolorum reiciendis doloribus
+          obcaecati vel.
         </p>
         <div
           className="flex justify-center items-center bg-cover bg-center bg-no-repeat shadow-lg p-4 md:px-5 md:py-3 rounded-full text-xl md:text-sm transition-transform duration-500 hover:scale-90"
@@ -57,14 +58,12 @@ const Header = () => {
             className="text-white text-capitalize outline-none border-none cursor-pointer"
             style={{
               fontSize: "15px",
-              backgroundColor: buttonColor,
             }}
           >
             Get Started
           </button>
           <AiOutlineSortAscending className="text-white" />
         </div>
-      
       </div>
     </div>
   );
